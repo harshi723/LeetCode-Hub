@@ -4,9 +4,7 @@ class Solution:
     #Function to rotate an array by d elements in counter-clockwise direction. 
     def rotateArr(self,A,D,N):
         #Your code here
-        x = A[:D]
-        y = A[D:]
-        A[:] = y + x
+        A[:] =  A[D:] + A[:D]
 #{ 
 #  Driver Code Starts
 #Initial Template for Python 3
