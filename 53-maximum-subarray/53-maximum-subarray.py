@@ -7,6 +7,5 @@ class Solution:
                 s += i
             else:
                 s = i
-            if m < s:
-                m = s
+            m = max(m, s)
         return m
