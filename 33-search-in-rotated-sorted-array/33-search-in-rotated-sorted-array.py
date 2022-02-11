@@ -8,12 +8,12 @@ class Solution:
                 x = m
                 break
             elif nums[m] >= nums[l]:
-                if target < nums[m] and target >= nums[l]:
+                if nums[l] <= target < nums[m]:
                     r = m-1
                 else:
                     l = m+1
             else:
-                if target > nums[m] and target <= nums[r]:
+                if nums[r] >= target > nums[m]:
                     l = m+1
                 else:
                     r = m-1
