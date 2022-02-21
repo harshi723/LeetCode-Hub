@@ -4,20 +4,14 @@ class Solution:
         x = []
         y = []
         for i in reversed(nums2):
+            while len(x) > 0 and i >= x[-1]:
+                if i < x[-1]:
+                    break
+                x.pop()
             if len(x) == 0:
+                l[i] = -1                
                 x.append(i)
-                l[i] = -1
-            elif i >= x[-1]:
-                while len(x) > 0:
-                    if i < x[-1]:
-                        l[i] = x[-1]
-                        x.append(i)
-                        break
-                    x.pop()
-                if i not in l:
-                    l[i] = -1
-                    x.append(i)
-            else:
+            if i < x[-1]:
                 l[i] = x[-1]                
                 x.append(i)
         for i in nums1:
