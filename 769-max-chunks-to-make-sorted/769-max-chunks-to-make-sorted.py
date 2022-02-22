@@ -7,7 +7,7 @@ class Solution:
         while j < n:
             if m < arr[j]:
                 m = arr[j]
-            if arr[j] < arr[j+1] and j == m:
+            if j == m:
                 x += 1
             j += 1
         return x
