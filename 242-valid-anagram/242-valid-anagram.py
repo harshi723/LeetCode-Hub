@@ -3,7 +3,7 @@ class Solution:
         
         if len(s) != len(t) or len(set(s)) != len(set(t)):
             return False
-        for i in s:
+        for i in set(s):
             if s.count(i) != t.count(i):
                 return False
         return True
