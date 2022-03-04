@@ -8,10 +8,7 @@
 #Function to find if number is present in the list or not
 def number_present(num_list, Q):
     #num is a 'list', Q is a 'int'
-    if Q in num_list:
-        return True
-    else:
-        return False
+    return Q in num_list
 
 #{ 
 #Driver Code Starts.
