@@ -8,12 +8,7 @@
 # Function to perform mathematical operation on X and Y
 def do_operation(X, Y):
     # Your code here
-    print(X+Y)
-    print(X-Y)
-    print(X*Y)
-    print(X/Y)
-    print(X**Y)
-    print(X//Y)
+    print(X+Y, X-Y, X*Y, X/Y, X**Y, X//Y, sep='\n')
 
 #{ 
 #Driver Code Starts.
