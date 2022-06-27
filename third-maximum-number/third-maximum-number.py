@@ -1,6 +1,5 @@
 class Solution:
     def thirdMax(self, nums: List[int]) -> int:
-        x = {}
         m = n = k = -sys.maxsize - 1
         for i in nums:
             if m < i:
