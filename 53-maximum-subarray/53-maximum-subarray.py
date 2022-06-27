@@ -3,9 +3,7 @@ class Solution:
         s = 0
         m = nums[0]
         for i in nums:
-            if s+i >= i:
-                s += i
-            else:
-                s = i
-            m = max(m, s)
+            s += i
+            m = max(s, m)
+            if s < 0: s = 0
         return m
