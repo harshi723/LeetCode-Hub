@@ -3,17 +3,15 @@ class Solution:
         m,n = len(mat), len(mat[0])
         if m*n != r*c:
             return mat
-        
-        a = []
-        for i in mat:
-            for j in i:
-                a.append(j)
                 
         l = [[0 for i in range(c)] for i in range(r)]
-        k = 0
+        row = col = 0
         
-        for i in range(r):
-            for j in range(c):
-                l[i][j] = a[k]
-                k += 1
+        for i in range(m):
+            for j in range(n):
+                l[row][col] = mat[i][j]
+                col += 1
+                if col == c:
+                    row += 1
+                    col = 0
         return l
