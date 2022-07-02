@@ -3,12 +3,10 @@ class Solution:
         if len(s) != len(t):
             return False
         l = {}
-        m = {}
-        for i in s:
-            l[i] = 1 + l.get(i,0)
         for i in t:
-            m[i] = 1 + m.get(i,0)
-        for i in m:
-            if i not in l or l[i] != m[i]:
+            l[i] = 1 + l.get(i,0)
+        for i in s:
+            if i not in l or l[i] == 0:
                 return False
+            l[i] -= 1
         return True
