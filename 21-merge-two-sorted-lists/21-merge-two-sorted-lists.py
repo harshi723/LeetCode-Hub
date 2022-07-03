@@ -9,7 +9,7 @@ class Solution:
             return list2
         if not list2:
             return list1
-        if list1.val <= list2.val:
-            return ListNode(list1.val, self.mergeTwoLists(list1.next, list2))
         if list1.val > list2.val:
             return ListNode(list2.val, self.mergeTwoLists(list1, list2.next))
+        else:
+            return ListNode(list1.val, self.mergeTwoLists(list1.next, list2))
