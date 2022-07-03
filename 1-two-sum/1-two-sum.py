@@ -3,7 +3,6 @@ class Solution:
         l = {}
         for i in range(len(nums)):
             if target - nums[i] in l:
-                return [l[target-nums[i]], i]
-            else:
-                l[nums[i]] = i
+                return [l[target - nums[i]], i]
+            l[nums[i]] = i
         
