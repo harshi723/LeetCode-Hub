@@ -11,9 +11,7 @@ class MyQueue:
         if not self.r:
             while self.q:
                 self.r.append(self.q.pop())
-            return self.r.pop()
-        else:
-            return self.r.pop()
+        return self.r.pop()
 
     def peek(self) -> int:
         return self.q[0] if not self.r else self.r[-1]
