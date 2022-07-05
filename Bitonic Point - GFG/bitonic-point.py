@@ -3,7 +3,18 @@ class Solution:
 
 	def findMaximum(self,arr, n):
 		# code here
-		return max(arr)
+		l,r = 1, n-2
+		while l<=r:
+		    m = (l + r)//2
+		    if arr[m] < arr[m-1]:
+		        r = m-1
+		    elif arr[m] < arr[m+1]:
+		        l = m+1
+		    else:
+		        return arr[m]
+		if arr[0] > arr[1]: return arr[0]
+		if arr[-1] > arr[-2]: return arr[-1]
+		return -1
 
 #{ 
 #  Driver Code Starts
