@@ -3,25 +3,17 @@
 class Solution:
     def sort012(self,arr,n):
         # code here
-        z = o = t = 0
-        for i in arr:
-            if i == 0:
-                z += 1
-            elif i == 1:
-                o += 1
+        l,m,h = 0,0,n-1
+        while m <= h:
+            if arr[m] == 0:
+                arr[m], arr[l] = arr[l], arr[m]
+                l += 1
+                m += 1
+            elif arr[m] == 1:
+                m += 1
             else:
-                t += 1
-        for i in range(n):
-            if z:
-                arr[i] = 0
-                z -= 1
-            elif o:
-                arr[i] = 1
-                o -= 1
-            elif t:
-                arr[i] = 2
-                t -= 1
-        return
+                arr[m], arr[h] = arr[h], arr[m]
+                h -= 1
 #{ 
 #  Driver Code Starts
 #Initial Template for Python 3
