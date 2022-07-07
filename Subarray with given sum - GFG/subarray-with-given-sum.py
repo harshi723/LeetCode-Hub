@@ -4,15 +4,14 @@
 class Solution:
     def subArraySum(self,arr, n, s): 
        #Write your code here
-        i = j = sums = 0
-        while i < n:
+        j = sums = 0
+        for i in range(n):
             sums += arr[i]
             while sums > s and j < i:
                 sums -= arr[j]
                 j += 1
             if sums == s:
                 return [j+1,i+1]
-            i += 1
         return [-1]
 #{ 
 #  Driver Code Starts
