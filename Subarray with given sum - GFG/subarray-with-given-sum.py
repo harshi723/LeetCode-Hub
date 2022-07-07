@@ -4,20 +4,16 @@
 class Solution:
     def subArraySum(self,arr, n, s): 
        #Write your code here
-        curr_sum = arr[0]
-        start = 0
-        i = 1
-        while i <= n:
-            while curr_sum > s and start < i-1:
-                curr_sum = curr_sum - arr[start]
-                start += 1
-            if curr_sum == s:
-                return [start+1, i]
-            if i < n:
-                curr_sum = curr_sum + arr[i]
+        i = j = sums = 0
+        while i < n:
+            sums += arr[i]
+            while sums > s and j < i:
+                sums -= arr[j]
+                j += 1
+            if sums == s:
+                return [j+1,i+1]
             i += 1
         return [-1]
-
 #{ 
 #  Driver Code Starts
 #Initial Template for Python 3
