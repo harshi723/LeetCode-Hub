@@ -1,5 +1,5 @@
 # Trailing zeroes in factorial
-## Easy 
+##  Easy 
 <div class="problem-statement">
                 <p></p><p><span style="font-size:18px">For an integer <strong>N</strong>&nbsp;find the number of trailing zeroes in <strong>N!.</strong></span></p>
 
