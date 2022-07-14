@@ -3,20 +3,19 @@
 class Solution:
     def makeProductOne(self, arr, N):
         # code here 
-        c = zc = nc = 0
+        c = 0
+        z = o = 0
         for i in arr:
-            if i > 0:
-                c += (i-1)
-            elif i < 0:
-                c += abs(i)-1
-                nc += 1
-            else:
-                zc += 1
-        if nc%2!=0 and zc==0:
+            if i==0: 
+                c += 1
+                z += 1
+            elif i>0: c += i-1
+            else: 
+                c += -1-i
+                o += 1
+        if o%2 != 0 and z==0:
             c += 2
-        c += zc
         return c
-
 #{ 
 #  Driver Code Starts
 #Initial Template for Python 3
