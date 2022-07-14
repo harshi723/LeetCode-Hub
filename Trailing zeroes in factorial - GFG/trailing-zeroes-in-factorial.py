@@ -4,11 +4,11 @@ class Solution:
     def trailingZeroes(self, n):
     	#code here 
     	c = 0
-    	while n>=5:
-    	    n = n//5
-    	    c += n
-    	return c
-
+    	p = 5
+        while n//p:
+            c += n//p
+            p *= 5
+        return c
 #{ 
 #  Driver Code Starts
 #Initial Template for Python 3
