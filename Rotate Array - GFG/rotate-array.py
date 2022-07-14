@@ -4,8 +4,6 @@ class Solution:
     #Function to rotate an array by d elements in counter-clockwise direction. 
     def rotateArr(self,A,D,N):
         #Your code here
-        if D>=N:
-            D = D%N
         x = A[:D]
         for i in range(N-D):
             A[i] = A[i+D]
