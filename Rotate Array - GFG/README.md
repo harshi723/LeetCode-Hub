@@ -40,6 +40,6 @@ Complete the function <strong>rotateArr</strong>() which takes the array, D and 
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
 1 &lt;= N &lt;= 10</span><sup><span style="font-size:15px">6</span></sup><br>
 <span style="font-size:18px">1 &lt;= D &lt;= 10<sup>6</sup></span><br>
-<span style="font-size:18px">0 &lt;=&nbsp;arr[i] &lt;= 10</span><sup style="font-size:18px">5</sup></p>
+<span style="font-size:18px">0 &lt;=&nbsp;arr[i] &lt;= 10</span><sup>5</sup></p>
  <p></p>
             </div>
