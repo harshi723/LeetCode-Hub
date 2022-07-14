@@ -4,9 +4,8 @@
 class Solution:
     def MissingNumber(self,array,n):
         # code here
-        x = sum(array)
-        y = n*(n+1)//2
-        return y-x
+        m = n*(n+1)//2
+        return m-sum(array)
 
 #{ 
 #  Driver Code Starts
