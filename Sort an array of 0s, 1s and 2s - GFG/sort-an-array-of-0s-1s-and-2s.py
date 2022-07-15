@@ -4,16 +4,17 @@ class Solution:
     def sort012(self,arr,n):
         # code here
         l,m,h = 0,0,n-1
-        while m <= h:
+        while m<=h:
             if arr[m] == 0:
-                arr[m], arr[l] = arr[l], arr[m]
-                l += 1
+                arr[l],arr[m] = arr[m],arr[l]
                 m += 1
+                l += 1
             elif arr[m] == 1:
                 m += 1
             else:
-                arr[m], arr[h] = arr[h], arr[m]
+                arr[h],arr[m] = arr[m],arr[h]
                 h -= 1
+
 #{ 
 #  Driver Code Starts
 #Initial Template for Python 3
