@@ -1,27 +1,23 @@
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        for i in range(9):
+        n = 9
+        for i in range(n):
             h = {}
-            v = {} 
-            for j in range(9):
-                currh = board[i][j]
-                currv = board[j][i]
-                if (currh!='.' and currh in h) or (currv!='.' and currv in v):
+            v = {}
+            for j in range(n):
+                he = board[i][j]
+                ve = board[j][i]
+                if he in h or ve in v:
                     return False
-                h[currh] = 1
-                v[currv] = 1
-        
-        e = f = 0
-        for i in range(9):
-            l = {}
-            for j in range(3):
-                for k in range(3):
-                    x = board[j+e][k+f]
-                    if x!='.' and x in l:
-                        return False
-                    l[x] = 1
-            e += 3
-            if e == 9:
-                e = 0
-                f += 3
+                if he!='.': h[he] = 1
+                if ve!='.': v[ve] = 1
+            
+        for i in range(0,n,3):
+            for j in range(0,n,3):
+                d = {}
+                for k in range(i, i+3):
+                    for l in range(j, j+3):
+                        if board[k][l] in d:
+                            return False
+                        if board[k][l]!='.': d[board[k][l]] = 1
         return True
