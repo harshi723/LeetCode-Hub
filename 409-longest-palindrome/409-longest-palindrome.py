@@ -1,8 +1,14 @@
 class Solution:
     def longestPalindrome(self, s: str) -> int:
-        res = 0
-        for i in collections.Counter(s).values():
-            res += i//2 * 2
-            if res % 2 == 0 and i % 2 == 1:
-                res += 1
-        return res
+        x = collections.Counter(s)
+        c = 0
+        flag = 0
+        for i in x:
+            if x[i]%2 == 0:
+                c += x[i]
+            else:
+                c += x[i]-1
+                flag = 1
+        if flag == 1:
+            c += 1
+        return c
