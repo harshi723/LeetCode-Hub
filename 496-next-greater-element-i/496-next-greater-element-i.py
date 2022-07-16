@@ -1,13 +1,12 @@
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
         l = {}
-        x = []
+        stack = []
+        res = []
         for i in nums2:
-            while len(x) and x[-1] < i:
-                l[x.pop()] = i
-            x.append(i)
-        for i in range(len(nums1)):
-            nums1[i] = l.get(nums1[i], -1)
-            
-        return nums1
-                
+            while stack and stack[-1]<i:
+                l[stack.pop()] = i
+            stack.append(i)
+        for i in nums1:
+            res.append(l.get(i,-1))
+        return res
