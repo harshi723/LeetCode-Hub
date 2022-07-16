@@ -1,12 +1,10 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        if len(s) != len(t):
-            return False
-        l = {}
+        x = collections.Counter(s)
         for i in t:
-            l[i] = 1 + l.get(i,0)
-        for i in s:
-            if i not in l or l[i] == 0:
-                return False
-            l[i] -= 1
+            if i not in x or x[i]==0: return False
+            else:
+                x[i] -= 1
+        for i in x: 
+            if x[i] != 0: return False
         return True
