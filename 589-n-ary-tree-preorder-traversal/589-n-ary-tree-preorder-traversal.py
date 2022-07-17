@@ -8,11 +8,11 @@ class Node:
 
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
-        def helper(root,x):
-            if root is not None:
-                x.append(root.val)
-                for i in root.children:
-                    helper(i,x)
+        def helper(root, x):
+            if not root: return 
+            x.append(root.val)
+            for i in root.children:
+                helper(i,x)
             return x
         x = []
         return helper(root,x)
