@@ -7,12 +7,21 @@
 import queue
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        l = {}
         q = queue.Queue()
-        if root: q.put((root,0))
+        x = []
+        y = []
+        if root: 
+            q.put(root)
+            q.put('null')
         while not(q.empty()):
-            node, lvl = q.get()
-            l[lvl] = l.get(lvl, []) + [node.val]
-            if node.left: q.put((node.left, lvl+1))
-            if node.right: q.put((node.right, lvl+1))
-        return l.values()
+            curr = q.get()
+            if curr == 'null':
+                x.append(y)
+                if not q.empty():
+                    q.put('null')
+                    y = []
+            else:
+                y.append(curr.val)
+                if curr.left: q.put(curr.left)
+                if curr.right: q.put(curr.right)
+        return x
