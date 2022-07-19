@@ -3,7 +3,7 @@ class Solution:
         m,n = len(mat), len(mat[0])
         if m*n != r*c:
             return mat
-        ans = [[0 for j in range(c)] for i in range(r)]
+        ans = [[0 for i in range(c)] for j in range(r)]
         for i in range(m):
             for j in range(n):
                 x = n*i+j
