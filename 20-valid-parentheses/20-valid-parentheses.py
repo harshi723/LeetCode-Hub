@@ -1,13 +1,13 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        l = {
-            '(':')', '[':']', '{':'}'
-        }
-        arr = []
+        l = {'(':')', '[':']', '{':'}' }
+        stack = []
         for i in s:
             if i in l:
-                arr.append(l[i])
+                stack.append(l[i])
             else:
-                if not arr or i!=arr.pop():
+                if stack and stack[-1] == i:
+                    stack.pop()
+                else:
                     return False
-        return len(arr)==0
+        return len(stack)==0
