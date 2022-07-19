@@ -7,4 +7,14 @@ class Solution:
         for i in range(m,m+n):
             nums1[i] = nums2[j]
             j += 1
-        nums1.sort()
+        gap = (m+n+1)//2
+        while gap:
+            l,r = 0,gap
+            while r < m+n:
+                if nums1[l] > nums1[r]:
+                    nums1[l], nums1[r] = nums1[r], nums1[l]
+                l += 1
+                r += 1
+            # print(nums1, gap)
+            if gap == 1: break
+            gap = (gap+1)//2
