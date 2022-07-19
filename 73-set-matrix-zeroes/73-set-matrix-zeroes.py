@@ -3,26 +3,16 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        def zeroIt(matrix, i, j):
-            for m in range(len(matrix)):
-                if matrix[m][j] != 'X':
-                    matrix[m][j] = 0
-            for m in range(len(matrix[0])):
-                if matrix[i][m] != 'X':
-                    matrix[i][m] = 0
-        
-        for i in range(len(matrix)):
-            for j in range(len(matrix[0])):
+        m,n = len(matrix), len(matrix[0])
+        col = 1
+        for i in range(m):
+            if matrix[i][0] == 0: col = 0
+            for j in range(1,n):
                 if matrix[i][j] == 0:
-                    matrix[i][j] = 'X'
-        # print(x)
-        for i in range(len(matrix)):
-            for j in range(len(matrix[0])):
-                if matrix[i][j] == 'X':
-                    zeroIt(matrix, i, j)
-        for i in range(len(matrix)):
-            for j in range(len(matrix[0])):
-                if matrix[i][j] == 'X':
-                    matrix[i][j]= 0
-                
-                
+                    matrix[i][0] = matrix[0][j] = 0
+        
+        for i in range(m-1,-1,-1):
+            for j in range(n-1,0,-1):
+                if matrix[i][0] == 0 or matrix[0][j] == 0:
+                    matrix[i][j] = 0
+            if col == 0: matrix[i][0] = 0
