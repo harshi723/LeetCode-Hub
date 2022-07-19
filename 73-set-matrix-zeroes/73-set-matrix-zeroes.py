@@ -11,7 +11,6 @@ class Solution:
                 if matrix[i][m] != 'X':
                     matrix[i][m] = 0
         
-        x = []
         for i in range(len(matrix)):
             for j in range(len(matrix[0])):
                 if matrix[i][j] == 0:
